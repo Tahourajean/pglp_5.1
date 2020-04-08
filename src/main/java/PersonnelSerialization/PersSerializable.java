@@ -22,13 +22,14 @@ public class PersSerializable {
     {
         try {
             FileOutputStream fos 
-            =new FileOutputStream("C:\\Users\\USER\\Desktop\\coursM1\\s2\\PGL\\pglp_4.1\\personnel.txt");
+            =new FileOutputStream("C:\\Users\\USER\\Desktop\\coursM1\\s2\\PGL\\pglp_5.1\\personnel.txt");
             ObjectOutputStream os =new ObjectOutputStream(fos);
             os.writeObject(p);
             System.out.println("objet sérialisé");
             os.close();
             
             } catch (Exception e) {
+                e.printStackTrace();
         }
         
     }
