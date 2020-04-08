@@ -1,14 +1,16 @@
 package fr.uvsq;
 
+import java.io.Serializable;
+
 /**
  * Hello world!
  *
  */
-public class Telephone
+public class Telephone implements Serializable
 {
-   String numero1;
+    private String numero1;
     private String numero2;
-	private String numero3;
+    private String numero3;
 	
     public Telephone(String num1,String num2,String num3)
 	{

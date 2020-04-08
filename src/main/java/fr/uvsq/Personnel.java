@@ -1,5 +1,6 @@
 package fr.uvsq;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +9,9 @@ import java.util.List;
  * Hello world!
  *
  */
-public class Personnel implements Personne
+public class Personnel implements Personne,Serializable
 {
-    final String nom;
+    private final String nom;
     private final String prenom;
     private final LocalDate dateNaiss;
     private final List<Telephone> telephones;
@@ -84,6 +85,22 @@ public class Personnel implements Personne
         return p;
    
     }   
+
+    public String getNom() {
+        return nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public LocalDate getDateNaiss() {
+        return dateNaiss;
+    }
+
+    public List<Telephone> getTelephones() {
+        return telephones;
+    }
    
    
 }
