@@ -18,7 +18,7 @@ import javax.tools.FileObject;
 public class PersSerializable {
     Personnel p = new Personnel.Builder("Simporé","Naimatou")
                 .ajouterTelephone(new Telephone("75221521","0751548227" ,"72556688")).build();
-    public void persoSerialize()
+    public Personnel persoSerialize()
     {
         try {
             FileOutputStream fos 
@@ -31,6 +31,7 @@ public class PersSerializable {
             } catch (Exception e) {
                 e.printStackTrace();
         }
+        return p;
         
     }
     

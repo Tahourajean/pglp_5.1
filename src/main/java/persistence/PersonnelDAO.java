@@ -5,7 +5,12 @@
  */
 package persistence;
 
+import PersonnelSerialization.PersDeserializable;
+import PersonnelSerialization.PersSerializable;
 import fr.uvsq.Personnel;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -15,12 +20,23 @@ public class PersonnelDAO  extends DAO<Personnel>{
 
     @Override
     public Personnel create(Personnel objet) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        PersSerializable pers=new PersSerializable();
+         objet=pers.persoSerialize();
+         return objet;
     }
 
     @Override
     public Personnel update(Personnel objet) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        PersDeserializable persD=new PersDeserializable();
+        try {
+            objet=persD.persoDeserialize();
+           
+        } catch (IOException ex) {
+            Logger.getLogger(PersonnelDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(PersonnelDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return objet;
     }
 
     @Override
